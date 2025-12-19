@@ -22,3 +22,44 @@
     <div class="stat-desc">valor original: {{ fullName() }}</div>
   </div>
 </div>
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ customDate() | date:'medium' }}</div>
+    <div class="stat-desc">valor original: {{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ customDate() | date: 'shortDate' }}</div>
+    <div class="stat-desc">valor original: {{ customDate() | date}}</div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{ customDate() | date:'full' }}</div>
+    <div class="stat-desc">valor original: {{ customDate() | date }}</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="flex flex-row gap-2">
+  <h1 class="text-2xl font-bold">
+    Locale Actual:
+    <span class="badge badge-secondary">ES</span>
+  </h1>
+
+  <button class="btn btn-primary">A francés</button>
+  <button class="btn btn-primary">A Inglés</button>
+  <button class="btn btn-primary">A español</button>
+</div>
