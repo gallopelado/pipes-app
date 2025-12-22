@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValuePipe, SlicePipe, TitleCasePipe } from '@angular/common';
+import { AsyncPipe, I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValuePipe, SlicePipe, TitleCasePipe } from '@angular/common';
 import { CardComponent } from "../../components/card/card.component";
 
 const client1 = {
@@ -25,7 +25,8 @@ const client2 = {
     SlicePipe,
     JsonPipe,
     KeyValuePipe,
-    TitleCasePipe
+    TitleCasePipe,
+    AsyncPipe
   ],
   templateUrl: './uncommon-page.component.html',
 })
@@ -70,5 +71,16 @@ export default class UncommonPageComponent {
     age: 34,
     address: 'Villa Elisa, Paraguay',
   }
+
+  // Async Pipe
+  promiseValue: Promise<string> = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+      //resolve('Tenemos data en la promesa.');
+      reject('Hubo un error');
+      console.log('Promesa finalizada');
+    }, 4000);
+
+  });
 
 }
