@@ -46,7 +46,7 @@
 <div class="stats stats-vertical lg:stats-horizontal shadow w-full">
   <div class="stat">
     <div class="stat-title">Date Pipe</div>
-    <div class="stat-value">{{ customDate() | date:'full' }}</div>
+    <div class="stat-value">{{ customDate() | date:'fullDate' }}</div>
     <div class="stat-desc">valor original: {{ customDate() | date }}</div>
   </div>
 </div>
@@ -56,10 +56,10 @@
 <div class="flex flex-row gap-2">
   <h1 class="text-2xl font-bold">
     Locale Actual:
-    <span class="badge badge-secondary">ES</span>
+    <span class="badge badge-secondary">{{ currentLocale() }}</span>
   </h1>
 
-  <button class="btn btn-primary">A francés</button>
-  <button class="btn btn-primary">A Inglés</button>
-  <button class="btn btn-primary">A español</button>
+  <button class="btn btn-primary" (click)="changeLocale('fr')">A francés</button>
+  <button class="btn btn-primary" (click)="changeLocale('en')">A Inglés</button>
+  <button class="btn btn-primary" (click)="changeLocale('es')">A español</button>
 </div>
