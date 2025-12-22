@@ -13,4 +13,15 @@
     <button (click)="changeClient()" class="btn btn-primary">Cambiar cliente</button>
   </app-card>
 
+  <app-card title="i18nPluralPipe">
+    <p>Actualmente <span class="font-thin">{{ clients().length | i18nPlural: clientsMap() }}</span></p>
+
+    <button
+      (click)="deleteClient()"
+      [disabled]="clients().length===0"
+      class="btn btn-primary">
+      Borrar cliente
+    </button>
+  </app-card>
+
 </div>
